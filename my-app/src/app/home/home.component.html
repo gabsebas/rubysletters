@@ -1,0 +1,43 @@
+<body>
+<div class="main-container">
+    <div class="header"></div>
+    <div class="content">
+      <div class="logo">
+        <h1> 🧸 ruby's letters</h1>
+      </div>
+      
+      <div class="welcome-text">
+        <p>welcome to rubysletters.com</p>
+        <p>a space where c.loo from all around the world</p>
+        <p>can share their endless love and support for yeojin &lt;3</p>
+      </div>
+      
+      <div class="gallery">
+        <img src="/assets/yeojin1.png">
+        <img src="/assets/yeojin2.png">
+        <img src="/assets/yeojin3.png">
+      </div>
+      
+      <div class="buttons">
+        <button class="btn" (click)="toggleLetters()">send/view letters</button>
+        <button class="btn" (click)="toggleArtwork()">artwork gallery</button>
+      </div>
+
+      <div class="letters-section" *ngIf="showLetters">
+        <h3>Letters to Yeojin</h3>
+        <div class="letters-list">
+          <div class="letter-card" *ngFor="let letter of letters">
+            <div class="letter-body">{{ letter.message }}</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="artwork-section" *ngIf="showArtwork">
+        <h3>Artwork Gallery</h3>
+        <p>Coming soon!</p>
+      </div>
+      
+      
+    </div>
+  </div>
+  </body>
