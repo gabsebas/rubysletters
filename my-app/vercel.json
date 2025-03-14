@@ -5,12 +5,16 @@
         "src": "package.json",
         "use": "@vercel/static-build",
         "config": {
-          "buildCommand": "npm run build",
+          "buildCommand": "npm run vercel-build",
           "outputDirectory": "dist/my-app"
         }
       }
     ],
     "routes": [
+      {
+        "src": "/(assets/.+)",
+        "dest": "/$1"
+      },
       {
         "src": "/(.*)",
         "dest": "/index.html"
