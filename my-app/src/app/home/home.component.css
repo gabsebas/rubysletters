@@ -61,7 +61,7 @@
   /* Welcome text */
   .welcome-text {
     margin-bottom: 30px;
-    line-height: 1.6;
+    line-height: 1.0;
     font-size: 1.1rem;
     font-family: Arial, Helvetica, sans-serif;
   }
@@ -151,19 +151,19 @@
     margin-bottom: 20px;
     text-align: center;
   }
+  .letters-section p{
+    font-family: Arial, Helvetica, sans-serif;
+  }
   
   .letters-list {
     display: flex;
     flex-direction: column;
     gap: 20px;
   }
-  
-  .letter-card {
-    background-color: #fff9f9;
-    border: 2px solid #f7b6b6;
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    margin-bottom: 15px;
+
+  .disclaimer p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 800;
+    color: #f59a9a;
   }
   
