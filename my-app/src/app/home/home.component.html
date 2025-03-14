@@ -1,4 +1,4 @@
-<body>
+<div class = "wrapper">
 <div class="main-container">
     <div class="header"></div>
     <div class="content">
@@ -23,21 +23,17 @@
         <button class="btn" (click)="toggleArtwork()">artwork gallery</button>
       </div>
 
-      <div class="letters-section" *ngIf="showLetters">
+      <div class="letters-section" [style.display]="showLetters ? 'block' : 'none'">
         <h3>Letters to Yeojin</h3>
-        <div class="letters-list">
-          <div class="letter-card" *ngFor="let letter of letters">
-            <div class="letter-body">{{ letter.message }}</div>
-          </div>
-        </div>
+        <div class="commonninja_component pid-4ee7e1fd-ef10-4b08-b454-02c7e2ef4ed0"></div>
       </div>
       
       <div class="artwork-section" *ngIf="showArtwork">
         <h3>Artwork Gallery</h3>
         <p>Coming soon!</p>
+        <app-gallery></app-gallery>
       </div>
-      
-      
+
     </div>
   </div>
-  </body>
+</div>
