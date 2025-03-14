@@ -1,8 +1,21 @@
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    grid-gap: 15px;
-    padding: 15px;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 10px; 
+  }
+  
+  /* Two columns on medium-sized screens */
+  @media (max-width: 768px) {
+    .gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  /* One column on small screens */
+  @media (max-width: 480px) {
+    .gallery-grid {
+      grid-template-columns: 1fr;
+    }
   }
   
   .gallery-item {
@@ -12,8 +25,13 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    height: 0;
-    padding-bottom: 75%; /* 4:3 aspect ratio */
+    aspect-ratio: 1/1; 
+  }
+  
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
   }
   
   .gallery-item:hover {
@@ -21,21 +39,10 @@
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
   }
   
-  .gallery-item img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-  }
-  
   .gallery-item:hover img {
     transform: scale(1.05);
   }
   
-  /* Optional: Add an overlay with caption */
   .gallery-caption {
     position: absolute;
     bottom: 0;
@@ -52,10 +59,3 @@
     opacity: 1;
   }
   
-  /* For smaller screens */
-  @media (max-width: 768px) {
-    .gallery-grid {
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      grid-gap: 10px;
-    }
-  }

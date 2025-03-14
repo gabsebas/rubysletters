@@ -31,8 +31,7 @@ export class GalleryComponent implements OnInit {
           height: parseInt(size[1], 10),
           alt: link.querySelector('img')?.getAttribute('alt') || ''
         });
-        
-        // Add click event listener to open PhotoSwipe
+  
         link.addEventListener('click', (e) => {
           e.preventDefault();
           this.openPhotoSwipe(items, items.indexOf(items.find(item => item.src === href)));
@@ -49,17 +48,14 @@ export class GalleryComponent implements OnInit {
       index: index || 0,
       bgOpacity: 0.85,
       showHideOpacity: true,
-      // Add any other options you need
+  
     };
   
     const lightbox = new PhotoSwipe(options);
     
-    // Initialize PhotoSwipe
     lightbox.init();
     
-    // Optional: Add events
     lightbox.on('uiRegister', function() {
-      // Add custom UI elements here if needed
     });
   }
 }
